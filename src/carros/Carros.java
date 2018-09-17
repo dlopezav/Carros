@@ -24,7 +24,6 @@ public class Carros {
             Persona persona1= new Persona("Diego", "Lopez", 8);
             Carro carro1 = new Carro(rueda,"chasis", "2500", "Ford");
             
-            persona1.setCarros(carros);
             Carro[] Car=persona1.listaCarros();
             for (int i = 0; i<1 ;i++) {
                 System.out.println("Carro #"+i+" Chasis:"+ Car[i].getChasis().getTipo()+ " Motor:"+Car[i].getMotor()+ " Ruedas: "+Car[i].getRueda()[1].getTipo());
