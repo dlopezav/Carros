@@ -13,17 +13,13 @@ public class Persona {
     private String nombre;
     private String apellido;
     private Carro[] carros;
-    private int z;
+    private int numCarros;
 
     public Persona(String nombre, String apellido, int cant) {
         this.nombre = nombre;
         this.apellido = apellido;
-        if(cant>=2){
-            this.carros = new Carro[cant];
-        }else{
-            System.out.println("No es una cantidad valida de carros ");
-        }
-        z=cant;
+        this.carros = new Carro[cant];
+        this.numCarros=cant;
     }
 
     
@@ -50,8 +46,16 @@ public class Persona {
         return carros;
     }
 
-    public void setCarros(Carro[] carros) {
-        this.carros = carros;
+    public void setCarros(Carro carros) {
+        for (int i = 0; i < numCarros; i++) {
+            if(this.carros[i]==null){
+                this.carros[i] = carros;
+            i=numCarros;
+            }
+        }
     }
-    
-}
+    public int getnumCarros(){
+        return numCarros;
+    }    
+        
+    }
